@@ -10,11 +10,9 @@ clear_all() {
 }
 
 get_files() {
-    git clone https://github.com/Captain-ZR/auto_install.git
+    wget https://github.com/Captain-ZR/auto_install/releases/download/v1.0/auto_install.tar.gz
     
     rm -rf ${files_dir}/install.sh
-    mv ${files_dir}/${tar_file_name} ./
-    rm -rf ${files_dir}    
 }
 
 decompress() {
