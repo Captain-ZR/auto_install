@@ -12,7 +12,7 @@ clear_all() {
 get_files() {
     wget https://github.com/Captain-ZR/auto_install/releases/download/v1.0/auto_install.tar.gz
     
-    rm -rf ${files_dir}/install.sh
+    rm -rf $0	# delete self
 }
 
 decompress() {
@@ -29,3 +29,4 @@ execute() {
 get_files
 decompress
 execute
+
