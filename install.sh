@@ -10,9 +10,11 @@ clear_all() {
 }
 
 get_files() {
-    wget https://github.com/Captain-ZR/auto_install/releases/download/v1.0/auto_install.tar.gz
-    
-    rm -rf $0	# delete self
+    version=$(wget --no-check-certificate -qO- https://api.github.com/repos/Captain-ZR/auto_install/releases/latest | grep 'tag_name' | cut -d\" -f4)
+    download_link="https://github.com/Captain-ZR/auto_install/releases/download/${version}/${tar_file_name}"
+    wget ${download_link}
+
+   # rm -rf $0	# delete self
 }
 
 decompress() {
